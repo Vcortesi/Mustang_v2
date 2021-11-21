@@ -45,6 +45,7 @@ input[type=search]:focus {
 }
 
 .autocomplete-items {
+  color:black;
   margin-top: 0%;
   width:15%;
   position: flex;

@@ -1,9 +1,10 @@
 var contactURLArray = [];
 var contactArray = [];
-var first = [];
+var first = []; // Array of firstNames from JSON files. Used for AutoSearchBar
 var loadingContact = 0;
 var currentContactIndex = 0; 
 
+// Sets the input box values to a specific contact
 function viewCurrentContact(){
     currentContact = contactArray[currentContactIndex];
     console.log("Current Contact: ");
@@ -19,6 +20,7 @@ function viewCurrentContact(){
 
 }
 
+// Goes back one element in contactArray and calls viewCurrentContact()
 function previous(){
     if (currentContactIndex > 0) {
         currentContactIndex--;
@@ -27,6 +29,7 @@ function previous(){
     viewCurrentContact();
 }
 
+// Goes forward one element in contactArray and calls viewCurrentContact()
 function next(){
     if (currentContactIndex < (contactArray.length-1)) {
         currentContactIndex++;
@@ -36,6 +39,7 @@ function next(){
 
 }
 
+// Creates a new contact and inserts it into the contactArray
 function newContact(){
     console.log('New Contact Added...');
     document.getElementById("warning").innerHTML = ""
@@ -52,7 +56,7 @@ function newContact(){
     viewCurrentContact();
     document.getElementById("contactsID").innerHTML = JSON.stringify(contactArray,null,2);
 }
-
+// Removes contact from contactArray
 function removeContact(){
     if(contactArray.length > 1){
         console.log('Contact Removed...');
@@ -70,6 +74,7 @@ function removeContact(){
    
 }
 
+// Taken from the example code. This function auto-fills the state/city with php/zip
 function autoFill() {
     var zip = document.getElementById("zipID").value
     console.log("zip:"+zip);
@@ -146,10 +151,7 @@ async function nextContact(URL) {
     first.push(i);
     autocomplete(document.getElementById("myInput"), first);
    
-
-    
     contactArray.push(contact);
-
 
     document.getElementById("contactsID").innerHTML = JSON.stringify(contactArray,null,2);
 
@@ -168,6 +170,7 @@ async function nextContact(URL) {
     
 }
 
+// Taken from W3 tutorial and modified
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -265,11 +268,13 @@ function autocomplete(inp, arr) {
     });
   }
 
+// In conjunction with the above autocomplete function, showLookup() calls viewCurrentContact
 function showLookup(){
-    console.log("hi")
+
     var contactLookedUp = document.getElementById("myInput").value;
     var k = 0;
     for(var i = 0; i<contactArray.length;i++){
+      
         if(contactArray[i].firstName == contactLookedUp){
             var k = 1;
             document.getElementById("nameID").value = contactArray[i].firstName
@@ -284,8 +289,6 @@ function showLookup(){
     }
 
 }
-
-
 
 
 
