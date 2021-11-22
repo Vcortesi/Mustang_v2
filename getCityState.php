@@ -11,8 +11,8 @@
     "60102" => "Algonquin, IL",
     "60103" => "Bartlett, IL",
     "60104" => "Bellwood, IL",
+    "60106" => "Bensenville, IL",
     "60105" => "Bensenville, IL",
-    "60106" => "Ericville, IL",
     "60107" => "Streamwood, IL",
     "60108" => "Bloomingdale, IL",
     "60109" => "Burlington, IL",
@@ -96,7 +96,8 @@
     "60195" => "Schaumburg, IL",
     "60196" => "Schaumburg, IL",
     "60197" => "Carol Stream, IL",
-    "60199" => "Carol Stream, IL"
+    "60199" => "Carol Stream, IL",
+    "60638" => "Chicago, IL"
   );
   $zip = $_GET["zip"];
   if (array_key_exists($zip, $cityState))

@@ -21,22 +21,28 @@
         <h1 class="autocomplete">Mustang</h1>
         <h2 class="autocomplete">2</h2>
                 <div class = autocomplete>
+                    
                     <input id="nameID" type="text" value="" size="20" placeholder="Name">
+
                     <input id="emailID" type="text" value="" size="20" placeholder="Email">
+
                     <input id="cityID" type="text" value="" size="20" placeholder="City">
-                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()" placeholder="State">
+
+                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()"placeholder="State">
+
                     <input id="zipID" type="text" value="" size="20" onfocus="autoFill()" onblur="autoFill()" placeholder="Zip">
+
+                   
 
                     <button type="button" autofocus onclick="next()">Next</button>
                     <button type="button" onclick="previous()">Previous</button>
                     <button type="button" onclick="newContact()">New</button>
-                    <button type="button" onclick="removeContact()">Delete</button>
 
+                    <button type="button" onclick="removeContact()">Delete</button>
                     <p id="statusID"></p>
                 </div>
         <br><br><hr>
         <p id=warning></p>
-
        Current List Of Contacts:<pre id="contactsID"></pre>
 
         <script src="mustang-v2-lite.js"></script>
